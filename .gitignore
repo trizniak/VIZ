@@ -37,3 +37,11 @@ vignettes/*.pdf
 
 # R Environment Variables
 .Renviron
+
+# Project
+VIZ.Rproj
+
+# Folders
+DATA/
+OUTPUT/
+T E M P/

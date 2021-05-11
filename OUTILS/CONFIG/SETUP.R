@@ -28,20 +28,20 @@ pacman::p_load(
         writexl,	#[DATA]		https://cran.r-project.org/web/packages/writexl/index.html
         # crosstalk,	#[INTERACTIVE]	https://cran.r-project.org/web/packages/crosstalk/index.html
         # glue,		#[OUTILS]	https://cran.r-project.org/web/packages/glue/index.html
-        rvest,        	#[OUTILS]	https://cran.r-project.org/web/packages/rvest/index.html
+        # rvest,        #[OUTILS]	https://cran.r-project.org/web/packages/rvest/index.html
         janitor,	#[OUTILS]	https://cran.r-project.org/web/packages/janitor/index.html
-        RobustLinearReg,#[STAT]		https://cran.r-project.org/web/packages/RobustLinearReg/index.html
-        tidymodels,	#[STAT]		https://cran.r-project.org/web/packages/tidymodels/index.html
+        # RobustLinearReg,#[STAT]	https://cran.r-project.org/web/packages/RobustLinearReg/index.html
+        # tidymodels,	#[STAT]		https://cran.r-project.org/web/packages/tidymodels/index.html
         # DT,		#[TAB]		https://cran.r-project.org/web/packages/DT/index.html
         # kableExtra,	#[TAB]		https://cran.r-project.org/web/packages/kableExtra/index.html
         # reactable,	#[TAB]		https://cran.r-project.org/web/packages/reactable/index.html
         # dtwclust,	#[TIME SERIES]	https://cran.r-project.org/web/packages/dtwclust/index.html
-        fable,        	#[TIME SERIES]	https://cran.r-project.org/web/packages/fable/index.html
-        feasts,	        #[TIME SERIES]	https://cran.r-project.org/web/packages/feasts/index.html
+        # fable,        #[TIME SERIES]	https://cran.r-project.org/web/packages/fable/index.html
+        # feasts,	#[TIME SERIES]	https://cran.r-project.org/web/packages/feasts/index.html
         #slider,	#[TIME SERIES]	https://cran.r-project.org/web/packages/feasts/index.html
-        tsibble,	#[TIME SERIES]	https://cran.r-project.org/web/packages/tsibble/index.html
-        urca,        	#[TIME SERIES]	https://cran.r-project.org/web/packages/urca/index.html
-        zoo,       	#[TIME SERIES]	https://cran.r-project.org/web/packages/zoo/index.html
+        # tsibble,	#[TIME SERIES]	https://cran.r-project.org/web/packages/tsibble/index.html
+        # urca,        	#[TIME SERIES]	https://cran.r-project.org/web/packages/urca/index.html
+        # zoo,       	#[TIME SERIES]	https://cran.r-project.org/web/packages/zoo/index.html
         GGally,	        #[VIZ]		https://cran.r-project.org/web/packages/GGally/index.html
         ggh4x,	        #[VIZ]		https://cran.r-project.org/web/packages/ggh4x/index.html
         ggiraph,	#[VIZ]		https://cran.r-project.org/web/packages/ggiraph/index.html
@@ -135,21 +135,3 @@ country.list = EU.PO %>%
         arrange(Protocol.Order) %>%
         select(COUNTRY,Country.Name) %>%
         deframe()
-
-
-# ---- PROJECT PARAM ----
-target.YEAR=2020 # Forecasted year
-start.FXT=2015 # first year for out-of-sample (forecast) estimate
-index.refY=2015 # Reference YEAR for rescaling absolute values as indices
-# * Model param ----
-core.model="val.silc~val"
-generic.predictors=c("`CP00 @ prc_hicp_aind`",
-                     "`UVGD @ AMECO`",
-                     "`UVGD.pc @ AMECO`")
-rmse.T=3L
-# * Model types ----
-model.lab=c(direct="Direct (estimate = specific predictor)",
-            m.lm1="Univariate linear (specific predictor)",
-            m.ar1="Univariate linear w/ ARIMA errors (specific predictor)",
-            m.lmx="Multivariate linear (specific predictor + generic predictors)",
-            m.arx="Multivariate linear w/ ARIMA errors (specific predictor + generic predictors)")
